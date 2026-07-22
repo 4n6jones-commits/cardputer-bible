@@ -1,0 +1,120 @@
+Cardputer Pocket Bible v1.0 — M5Burner Ready
+
+Clean, intentional KJV reader. Most of the app is self-contained (no SD needed for the main features).
+
+=== WHAT'S INCLUDED (self-contained, very easy) ===
+- Simple 4-item main menu on HOME (direct, no deep nesting):
+  1. Read the Bible (OT/NT selector, book filter, easy chapter)
+  2. Verse of the Day
+  3. Extras
+  4. About (the classic passage instantly available)
+- Extras is now a clean 3-item list (Sinner's Prayer, Hymns with full lyrics, Topical/Gideon categories — all audited)
+- Reader with red letters + smooth scroll
+- Full book navigation with type filter works great
+- No audio, no bookmarks, no keyboard help screen (saves real estate)
+
+=== SD CARD? ===
+Optional for the main app.
+- All of the above is self-contained.
+- For complete 66-book text + L/R chapter change: copy `sd-card-bible/bible/` to SD root as `/bible/`.
+
+=== FLASH (mandatory for thousands of M5Burner users) ===
+1. DELETE every old CardBible / Pocket Bible entry.
+2. Reboot launcher.
+3. Flash ONLY PocketBible.bin
+4. Choose huge_app if prompted.
+5. Power cycle.
+
+See build.sh.
+
+This v1.0 is the clean easy base.
+
+=== WHY PREVIOUS VERSIONS "DID NOT WORK" / NO HYMNS / OLD MENU AFTER REINSTALL ===
+- Source had duplicate functions (loadChapterFromSD and parse 2-3 times each) → bad or partial compiles.
+- Leftover SEARCH state (not in enum) → would not run new code paths.
+- Audio code still present even when docs said removed.
+- Launcher caches old app entries by name/slot. Just flashing a new .bin often does nothing visible if you don't delete the old entry first.
+- SD data must be exactly at /bible/ on the card root (not in a subfolder).
+
+=== CLEAN REINSTALL (do this every time you want a guaranteed fresh result) ===
+
+1. LAUNCHER CLEANUP (most important step)
+   - Power on Cardputer into M5Launcher (or web flasher page).
+   - Find EVERY old "Pocket Bible", "cardbible", "Card bible" etc. entry.
+   - DELETE / REMOVE it (long-press or menu). Do not skip.
+   - Reboot the launcher / power cycle.
+
+2. SD CARD (full Bible + bookmarks + nav)
+   - Delete any old /bible folder on the SD if present.
+   - Copy the folder:
+       cardputer-bible/sd-card-bible/bible/
+     to the ROOT of the microSD card so it appears as:
+       /bible/books.txt
+       /bible/Genesis.txt
+       /bible/John.txt
+       ... all 66 books
+   - Safely eject.
+
+3. FLASH THE NEW BINARY (M5Burner)
+   - Download PocketBible.bin (the merged binary from GitHub Releases or your build).
+   - Open M5Burner.
+   - Select "Cardputer" (or Cardputer Advanced) from the device list.
+   - Go to the "Burn" tab.
+   - Choose "Local file".
+   - Select the PocketBible.bin you downloaded.
+   - Click Burn.
+   - If prompted for partition/app size, select "huge_app" (or any large 3MB+ scheme like "Doom").
+   - Wait for "Burn Complete".
+   - On the Cardputer: In M5Launcher, long-press and DELETE any old "Pocket Bible" or "CardBible" entries.
+   - Reboot the launcher or power cycle the device.
+   - The new Pocket Bible entry should appear. Launch it.
+
+   Alternative flashers (if M5Burner has issues):
+   - Web flasher: https://bmorcelli.github.io/Launcher/webflasher.html (select local bin)
+   - Or https://web.esphome.io/
+
+4. First run
+   - You should land on a clean menu with:
+       Browse Popular Verses
+       Book > Chapter > Verse
+       Hymns & Worship
+     at the top.
+   - Insert SD with /bible/ for full text (L/R chapter change works).
+   - No SD = still fully usable with the embedded popular verses + hymns.
+
+=== BLACK SCREEN / RED TEXT / "need 0x100000 (1MB)" / "cardbi pa did not load" ===
+This is the launcher failing to allocate a large enough contiguous app slot for the binary.
+Fixes (all three together):
+- Delete old entry first (step 1 above).
+- Use a -merged.bin built with huge_app (build.sh does this).
+- In launcher app settings for this binary, force a large partition scheme.
+
+The clean v2 source + build.sh now permanently requests huge_app.
+
+=== BUILDING AFTER CHANGES ===
+  cd cardputer-bible
+  ./build.sh
+Then use the files that appear in build/ (especially the merged.bin if the script produces one, or combine manually).
+
+=== CONTROLS (same in every screen) ===
+  Up = ; or k or K (or physical up)
+  Down = . or j or J
+  Enter = pick / load
+  B or Q or ESC = back to menu
+  In reader: L/R = chapter +/- (full SD mode), M = bookmark, G = quick ref, R = random
+
+Lists use 4-5 items with breathing room so they are easy to read on the 240x135 screen.
+
+=== FILES YOU NEED ===
+- Pocket Bible.ino (source - this is the clean one)
+- sd-card-bible/bible/ (copy to SD root as /bible/)
+- build.sh (uses huge_app)
+- The .bin files after build
+
+This version is intentionally small and obvious. Every function does one thing. The three requested features are the focus and should now be fully functional after a proper launcher-clean + SD-copy + flash.
+
+Copy the bible data to the SD card root as /bible/ every time.
+Delete the old launcher entry every time.
+Flash the new merged/huge build.
+
+That combination is what finally makes "it just works".

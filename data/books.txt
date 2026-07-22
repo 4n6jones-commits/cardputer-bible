@@ -1,0 +1,66 @@
+Genesis|50|GEN
+Exodus|40|EXO
+Leviticus|27|LEV
+Numbers|36|NUM
+Deuteronomy|34|DEU
+Joshua|24|JOS
+Judges|21|JDG
+Ruth|4|RUT
+1 Samuel|31|1SA
+2 Samuel|24|2SA
+1 Kings|22|1KI
+2 Kings|25|2KI
+1 Chronicles|29|1CH
+2 Chronicles|36|2CH
+Ezra|10|EZR
+Nehemiah|13|NEH
+Esther|10|EST
+Job|42|JOB
+Psalms|150|PSA
+Proverbs|31|PRO
+Ecclesiastes|12|ECC
+Song of Solomon|8|SNG
+Isaiah|66|ISA
+Jeremiah|52|JER
+Lamentations|5|LAM
+Ezekiel|48|EZK
+Daniel|12|DAN
+Hosea|14|HOS
+Joel|3|JOL
+Amos|9|AMO
+Obadiah|1|OBA
+Jonah|4|JON
+Micah|7|MIC
+Nahum|3|NAM
+Habakkuk|3|HAB
+Zephaniah|3|ZEP
+Haggai|2|HAG
+Zechariah|14|ZEC
+Malachi|4|MAL
+Matthew|28|MAT
+Mark|16|MRK
+Luke|24|LUK
+John|21|JHN
+Acts|28|ACT
+Romans|16|ROM
+1 Corinthians|16|1CO
+2 Corinthians|13|2CO
+Galatians|6|GAL
+Ephesians|6|EPH
+Philippians|4|PHP
+Colossians|4|COL
+1 Thessalonians|5|1TH
+2 Thessalonians|3|2TH
+1 Timothy|6|1TI
+2 Timothy|4|2TI
+Titus|3|TIT
+Philemon|1|PHM
+Hebrews|13|HEB
+James|5|JAS
+1 Peter|5|1PE
+2 Peter|3|2PE
+1 John|5|1JN
+2 John|1|2JN
+3 John|1|3JN
+Jude|1|JUD
+Revelation|22|REV
