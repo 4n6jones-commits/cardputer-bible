@@ -1,0 +1,14 @@
+{
+    "name": "Pocket Bible",
+    "description": "Clean, focused KJV Bible reader for the M5Stack Cardputer. Easy OT/NT navigation, verse of the day, hymns with full lyrics, topical verses, and the classic About passage. Mostly self-contained; optional SD card for the complete 66-book text and chapter navigation.",
+    "keywords": "ESP32, Cardputer, bible, KJV, reader, offline",
+    "author": "4n6jones-commits",
+    "repository": "https://github.com/4n6jones-commits/cardputer-bible",
+    "firmware_category": {
+        "path": "firmware",
+        "device": ["M5Stack Cardputer"],
+        "default_baud": 921600
+    },
+    "version": "1.0.0",
+    "framework": "Arduino"
+}
