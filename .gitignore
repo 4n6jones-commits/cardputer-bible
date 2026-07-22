@@ -4,3 +4,6 @@ build/
 # Byte-identical duplicate of sd-card-bible/bible/, produced as an
 # intermediate step by prepare_bible.py - no need to track both copies
 bible_prepared/
+
+# Byte-identical duplicate of firmware/PocketBible_0x0.bin
+/PocketBible.bin
